@@ -1,0 +1,47 @@
+
+
+<div class="container-fuid">
+    <div class="card">
+    <div class="card-header">
+        Lista Alumnos IRIC
+    </div>
+    <div class="card-body">
+        <div class="row">
+        <div class="col-md-2">Filtrar por: </div>
+        <div class="col-md-10">
+            <input [(ngModel)]="listFilter" class="form-control" name="filter" type="text"/>
+        </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                    <div class="table w-auto">
+                        <thead>
+                            <th>
+                                <button (click)="showImage()" class="btn btn-primary">Imagen</button>
+                            </th>
+                            <tr>
+                                <th scope="col">Matricula</th>
+                                <th>Nombre</th>
+                                <th>Edad</th>
+                                <th>Correo</th>
+                                <th>Foto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let alumno of alumnosIric">
+                              <td><img *ngIf="muestraImg" [src]="alumno.foto"
+                                  [style.width.px]="imageWidth"
+                                  [style.margin.px]="imageMargin"></td>
+                              <td>{{alumno.matricula}}</td>
+                              <td>{{alumno.nombre}}</td>
+                              <td>{{alumno.edad}}</td>
+                              <td>{{alumno.correo}}</td>
+                          </tr>
+                        </tbody>
+                    </div>
+                </div>
+    
+        </div>
+    </div>
+    </div>
+</div>
