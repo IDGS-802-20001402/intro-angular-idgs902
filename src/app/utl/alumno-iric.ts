@@ -4,4 +4,5 @@ export interface AlumnoIric {
       edad:number
       correo:string
       foto:string
+      calificacion:number
 }
